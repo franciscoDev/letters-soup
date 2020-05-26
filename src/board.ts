@@ -119,6 +119,16 @@ export class Board {
         return this.cells.length;
     }
 
+    public setSize(size:number):void {
+        this.rows = size;
+        this.columns = size; 
+    }
+ 
+    public reset() :void{
+        this.cells= [];
+        this.createDefaultCells(this.contentCell);
+    }
+
     //Get default content of the cells.
     public getDefaultContentCell():string{
         return this.contentCell;
@@ -126,5 +136,9 @@ export class Board {
 
     public getAllCells(){
         return this.cells;
+    }
+
+    public clear():void{
+
     }
 }

@@ -1,13 +1,18 @@
 {
-  "name": "letters-soup",
+  "name": "word-find",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config=webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.11"
+  }
 }

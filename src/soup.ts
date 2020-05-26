@@ -9,34 +9,49 @@ export class Soup {
     private fill:string ;
     private defaultFill:string;
     private solution:any;
+    private size:number;
 
     constructor(content:Array<string>,size:number,fill?:string) {
         this.content   = content;
+        this.size = size;
         this.solution = {};
-        this.board     = new Board(size,size,'*');
+        this.board     = new Board(this.size,this.size,'*');
         this.defaultFill = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         this.fill = (fill)?fill:this.defaultFill;
-        console.log(this.board.show());
     }
  
-    public generateSoup():Array<any>{ 
-        
+    public generate():Array<any>{ 
+        this.board.reset();
         for (let index = 0; index < this.content.length ; index++) {
             const content = this.content[index].toUpperCase();
-            console.log('CONTENT',content);
             const cells = this.getValidCells(content);
-            console.log('Valid Cells',cells);
             this.setContentInBoard(content,cells,this.isInvertContent() );
-            console.log(this.board.show());
             this.solution[content] = cells;
         } 
          this.fillEmptyCells();
-         console.log(this.board.show());
          return this.board.getAllCells();
     }
 
-    public getSolution():any{
+    public getSolution(valueInContent?:string):any{
+        if(valueInContent) return this.solution[valueInContent.toUpperCase()];
         return this.solution;
+    }
+ 
+    public show() :string{
+        return this.board.show();
+    }
+ 
+    public setContent(content:Array<string>):void {
+        this.content = content ;
+    }
+ 
+    public setSize(size:number) :void{
+        this.size= size;
+        this.board.setSize(this.size);
+    }
+ 
+    public getSize():number {
+       return this.size; 
     }
 
     private getValidCells(content:string):Array<Cell>{
