@@ -17,7 +17,7 @@ export class Board {
         this.createDefaultCells(this.contentCell);
     }
 
-
+    //Show content of the board.
     public show(): string {
         let output: string = '';
         for (let i = 0; i < this.cells.length; i++) {
@@ -30,6 +30,7 @@ export class Board {
         return output;
     }
 
+    //Set default content to each cell.
     private createDefaultCells(content:any) {
         for (let i = 0; i < this.rows; i++) {
             this.cells[i] = [];
@@ -39,22 +40,14 @@ export class Board {
         }
     }
 
- 
+    //Get a whole row from specific index.
     public getRow(row:number):Array<Cell> {
         let cells:Array<Cell> = [];
         cells = this.cells[row];
         return cells;
     }
 
-    public getColumn(column:number):Array<Cell> {
-        let cells:Array<Cell> = [];
-        for (let row = 0; row < this.cells.length; row++) {
-            cells.push(this.cells[row][column]); 
-        }   
-        return cells;
-    }
-
- 
+    //Get part of a row from specific index.
     public getRowCells(startCell:Cell,numberCells:number):Array<Cell> {
         let cells:Array<Cell> = [];
         let indexColumn = startCell.getColumn();
@@ -67,7 +60,16 @@ export class Board {
         return cells;
     }
 
+    //Get a whole column from specific index.
+    public getColumn(column:number):Array<Cell> {
+        let cells:Array<Cell> = [];
+        for (let row = 0; row < this.cells.length; row++) {
+            cells.push(this.cells[row][column]); 
+        }   
+        return cells;
+    }
 
+    //Get part of a column from specific index.
     public getColumnCells(startCell:Cell,numberCells:number):Array<Cell>{
         let cells:Array<Cell> = [];
         let indexRow = startCell.getRow();
@@ -80,7 +82,7 @@ export class Board {
         return cells;
     }
 
- 
+    //Get a whole diagonal from specific index.
     public getDiagonal(row:number,column:number) :Array<Cell>{
         let cells:Array<Cell> = [];
         let diagonalSize = (row > column)?( this.cells.length-row ): (this.cells.length- column);      
@@ -90,22 +92,39 @@ export class Board {
         return cells;
     }
 
+    //Get part of a diagonal from specific index.
+    public getDiagonalCells(startCell:Cell,numberCells:number) :Array<Cell>{
+        let cells:Array<Cell> = [];
+        let diagonalSize = (startCell.getRow() > startCell.getColumn())?( this.cells.length-startCell.getRow()  ): (this.cells.length- startCell.getColumn());      
+        if( numberCells <= diagonalSize )  
+            for (let indexCell = 0 ; indexCell < numberCells; indexCell++ ) {
+                cells.push(this.cells[startCell.getRow() + indexCell][startCell.getColumn() + indexCell]);
+            }       
+        return cells;
+    }
  
+    //Change a cell in board from specific row and column.
     public setCell(row:number,column:number,cell:Cell):void {
        this.cells[row][column] = cell;  
     }
 
+    //Get a cell in board from specific row and column.
     public getCell(row:number,column:number) : Cell{
         return this.cells[row][column];
         
     }
 
- 
+    //Get size of the board. 
     public getSize():number {
         return this.cells.length;
     }
 
+    //Get default content of the cells.
     public getDefaultContentCell():string{
         return this.contentCell;
+    }
+
+    public getAllCells(){
+        return this.cells;
     }
 }
