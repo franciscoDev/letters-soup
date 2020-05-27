@@ -1,15 +1,19 @@
 {
-  "name": "word-find",
+  "name": "letters-soup",
   "version": "1.0.0",
-  "description": "",
+  "description": "lib for game 'word find' ",
   "main": "main.js",
   "scripts": {
     "tscw":"tsc --watch",
     "wpdev":"",
     "build": "webpack --config webpack.prod.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franciscoDev/letters-soup.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "FrancDev francisco19.developer@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "ts-loader": "^6.0.0",
