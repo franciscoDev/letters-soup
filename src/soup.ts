@@ -54,6 +54,10 @@ export class Soup {
        return this.size; 
     }
 
+    public setFill(fill:string):void{
+        this.fill = fill;
+    }
+
     private getValidCells(content:string):Array<Cell>{
         let contentSize = content.length;
         let canSetInBoard = false;

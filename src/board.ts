@@ -138,7 +138,4 @@ export class Board {
         return this.cells;
     }
 
-    public clear():void{
-
-    }
 }
