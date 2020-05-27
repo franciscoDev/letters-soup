@@ -1,18 +1,18 @@
 # ¡¡ Letters-soup!! :stew:
 
 ### Descripcion
-**Letters-soup** es una pequeña libreria para crear tableros para jugar a encuentra la palabra.
+**Letters-soup** es una pequeña librería para crear tableros para jugar a encontrar la palabra.
 
 [![sopa-letras](https://lh3.googleusercontent.com/proxy/LWp3CBH23QY6hFBvNJWhYh1OZogq7xRN2ioDxeJRDMPWI_mGtV6d1wCg2icUReko-TJHdZA9Q96Dqb1PIErBxAq6OC_wilnKxDZ4YZXI3fQSBWRGdRX4 "sopa-letras")](https://lh3.googleusercontent.com/proxy/LWp3CBH23QY6hFBvNJWhYh1OZogq7xRN2ioDxeJRDMPWI_mGtV6d1wCg2icUReko-TJHdZA9Q96Dqb1PIErBxAq6OC_wilnKxDZ4YZXI3fQSBWRGdRX4 "sopa-letras")
 
-### Instalacion
-Por ahora solo se puede descargar desde el [tag release](https://github.com/franciscoDev/letters-soup/releases) de este repositorio pronto se creara un paquete para npm.
+### Instalación
+Por ahora solo se puede descargar desde el [tag release](https://github.com/franciscoDev/letters-soup/releases) de este de este repositorio pronto se creará un paquete para npm.
 
 :point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/ "letters-soup-alpha-1.0")
 
 ### Uso
 
-La funcion **init** inicializa el tablero y retorna un objeto **Soup**,recibe dos parametros que son requeridos:
+La función **init** inicializa el tablero y retorna un objeto **Soup**,recibe dos parámetros que son requeridos:
 - data : array de string.
 - size : un entero positivo que define el tamaño del tablero.
 
@@ -23,12 +23,11 @@ const data = ["iguala","cuervo","perro","cocodrilo","delfin"
 const size = 10;
 var soup =  Soup.init(data,size);
 ```
-> :warning: **Tamaño de las palabras**: la palabras deben tener una longitud variable y menor al tamaño del tablero
-ya que podria quedarse en un ciclo infinito tratando de colocar las palabras en el tablero; de igual forma el numero de palabras debe ser proporcional al tamaño del tablero para que tengan una correcta distribucion en el tablero.
+> :warning: **Tamaño de las palabras**: Las palabras deben tener una longitud variable y menor al tamaño del tablero, ya que podría quedarse en un ciclo infinito tratando de colocar las palabras en el tablero; de igual forma el número de palabras debe ser proporcional al tamaño del tablero para que tengan una correcta distribución en el tablero.
 
 #### Generar el tablero
 
-La funcion **generate#** retorna un array con las palabras ingresadas, colocadas aleatoriamente.
+La función **generate#** retorna un **array** con las palabras ingresadas, colocadas aleatoriamente.
 
 ```javascript
 var soup =  Soup.init(data,size);
@@ -36,8 +35,8 @@ var board = soup.generate();
 ```
 
 
-La funcion **getSolution#** retorna un array con la pocision de las palabras ingresadas en el tablero .
->:information_source: **Parametro opcional**: si se le pasa a la funcion cualquier palabra ingresada en el tablero retornara solo las pocisciones de esa palabra de lo contrario devolvera todas las pocisiones para todas las palabras ingresadas en el tablero.
+La función **getSolution#** retorna un **array** con la posición de las palabras ingresadas en el tablero .
+>:information_source: **Parámetro opcional**: si se le pasa a la función cualquier palabra ingresada en el tablero retornara solo las posiciones de esa palabra de lo contrario devolverá todas las posiciones para todas las palabras ingresadas en el tablero.
 ```javascript
 var soup  =  Soup.init(data,size);
 //without param
@@ -46,14 +45,14 @@ var solve = soup.getSolution();
 var solveToZebra = soup.getSolution('zebra');
 ```
 
-La funcion **setSize#** establece un nuevo tamaño para el tablero recibe un valor numerico para el nuevo tamaño.
+La función **setSize#** establece un nuevo tamaño para el tablero recibe un valor numérico para el nuevo tamaño.
  
 ```javascript
 var soup  =  Soup.init(data,size);
 soup.setSize(10);
 ```
-La funcion **setContent#** establece un nuevo contenido para el tablero recibe un **array** de string para colocar en el tablero.
->:information_source: **Contenido**: el contenido no solo puede ser palabra tambien puede ser combinacion de numeros,caracteres epeciales etc. Tambien se puede enviar un relleno acorde al contenido del tablero en la funcion **init#** o **setFill#** para ocultar los caracteres.
+La función **setContent#** establece un nuevo contenido para el tablero recibe un **array** de **string** para colocar en el tablero.
+>:information_source:**Contenido**: el contenido no solo puede ser palabra también puede ser combinación de números, caracteres especiales etc. También se puede enviar un relleno acorde al contenido del tablero en la función **init#** o **setFill#** para ocultar los caracteres.
  
 ```javascript
 const data = ["iguala","cuervo","perro","cocodrilo","delfin"
@@ -68,8 +67,7 @@ soup.setFill(fill);
 soup.setContent(data2);
 
 ```
-
-La funcion **show#**  retorna un string con todas la pocisiones del tablero.
+La función **show#** retorna un **string** con todas la posiciones del tablero.
  
 ```javascript
 var soup  = Soup.init(data,size);
@@ -96,8 +94,8 @@ console.log(board);
 [Q][P][B][H][Y][H][O][G][E][P][Q][U][G][S][V][V]
 ```
 
-La funcion **setFill#**  establece un relleno para ocultar las palabras.
->:information_source: **Relleno**: por defecto el relleno es una cadena con todos los caracteres del abecedario 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' pero se puede utlizar cualquier cadena de caracteres acorde al contenido en el tablero.
+La función **setFill#**  establece un relleno para ocultar las palabras.
+>:information_source: **Relleno**: por defecto el relleno es una cadena con todos los caracteres del abecedario 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' pero se puede utilizar cualquier cadena de caracteres acorde al contenido en el tablero.
 ```javascript
 const data = ["2343","4747","9699","2134","1241"
                ,"1111","0101","3435","5464","0909"];
