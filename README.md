@@ -8,7 +8,7 @@
 ### Instalación
 Por ahora solo se puede descargar desde el [tag release](https://github.com/franciscoDev/letters-soup/releases) de este de este repositorio pronto se creará un paquete para npm.
 
-:point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/ "letters-soup-alpha-1.0")
+:point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/tag/letter-soup-alpha-v1.0)
 
 ### Uso
 
