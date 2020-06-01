@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: './src/soup.ts',
   module: {
     rules: [
       {
@@ -17,8 +17,7 @@ module.exports = {
   output: {
     filename: 'soup.bundle.js',
     path: path.resolve(__dirname, 'build'),
-    filename: 'soup.bundle.js',
-    libraryTarget: 'var',
-    library: 'Soup'
+    libraryTarget: 'umd',
+    //library: 'Soup'
   },
 };
