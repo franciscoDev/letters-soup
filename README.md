@@ -3,12 +3,12 @@
 ### Descripcion
 **Letters-soup** es una pequeña librería para crear tableros para jugar a encontrar la palabra.
 
-[![sopa-letras](https://lh3.googleusercontent.com/proxy/LWp3CBH23QY6hFBvNJWhYh1OZogq7xRN2ioDxeJRDMPWI_mGtV6d1wCg2icUReko-TJHdZA9Q96Dqb1PIErBxAq6OC_wilnKxDZ4YZXI3fQSBWRGdRX4 "sopa-letras")](https://lh3.googleusercontent.com/proxy/LWp3CBH23QY6hFBvNJWhYh1OZogq7xRN2ioDxeJRDMPWI_mGtV6d1wCg2icUReko-TJHdZA9Q96Dqb1PIErBxAq6OC_wilnKxDZ4YZXI3fQSBWRGdRX4 "sopa-letras")
+[![sopa-letras](https://)
 
 ### Instalación
 Por ahora solo se puede descargar desde el [tag release](https://github.com/franciscoDev/letters-soup/releases) de este de este repositorio pronto se creará un paquete para npm.
 
-:point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/tag/letter-soup-alpha-v1.0)
+:point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/)
 
 ### Uso
 
