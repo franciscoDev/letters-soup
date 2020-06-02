@@ -21,7 +21,7 @@ const data = ["iguala","cuervo","perro","cocodrilo","delfin"
                     ,"leon","pantera","gato","perico","mono"
                     ,"raton","abeja","zebra","tigre","canguro"];
 const size = 10;
-var soup =  Soup.init(data,size);
+var soup =  new Soup(data,size);
 ```
 > :warning: **Tamaño de las palabras**: Las palabras deben tener una longitud variable y menor al tamaño del tablero, ya que podría quedarse en un ciclo infinito tratando de colocar las palabras en el tablero; de igual forma el número de palabras debe ser proporcional al tamaño del tablero para que tengan una correcta distribución en el tablero.
 
