@@ -12,7 +12,7 @@ Por ahora solo se puede descargar desde el [tag release](https://github.com/fran
 
 ### Uso
 
-La función **init** inicializa el tablero y retorna un objeto **Soup**,recibe dos parámetros que son requeridos:
+El objeto **Soup**,recibe dos parámetros que son requeridos:
 - data : array de string.
 - size : un entero positivo que define el tamaño del tablero.
 
@@ -30,7 +30,7 @@ var soup =  Soup.init(data,size);
 La función **generate#** retorna un **array** con las palabras ingresadas, colocadas aleatoriamente.
 
 ```javascript
-var soup =  Soup.init(data,size);
+var soup =  new Soup(data,size);
 var board = soup.generate();
 ```
 
@@ -38,7 +38,7 @@ var board = soup.generate();
 La función **getSolution#** retorna un **array** con la posición de las palabras ingresadas en el tablero .
 >:information_source: **Parámetro opcional**: si se le pasa a la función cualquier palabra ingresada en el tablero retornara solo las posiciones de esa palabra de lo contrario devolverá todas las posiciones para todas las palabras ingresadas en el tablero.
 ```javascript
-var soup  =  Soup.init(data,size);
+var soup  =  new Soup(data,size);
 //without param
 var solve = soup.getSolution();
 //with param
@@ -48,7 +48,7 @@ var solveToZebra = soup.getSolution('zebra');
 La función **setSize#** establece un nuevo tamaño para el tablero recibe un valor numérico para el nuevo tamaño.
  
 ```javascript
-var soup  =  Soup.init(data,size);
+var soup  =  new Soup(data,size);
 soup.setSize(10);
 ```
 La función **setContent#** establece un nuevo contenido para el tablero recibe un **array** de **string** para colocar en el tablero.
@@ -58,7 +58,7 @@ La función **setContent#** establece un nuevo contenido para el tablero recibe 
 const data = ["iguala","cuervo","perro","cocodrilo","delfin"
                     ,"leon","pantera","gato","perico","mono"]
 //default fill is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.            
-var soup  =  Soup.init(data,size,fill);
+var soup  = new Soup(data,size,fill);
 
 const data2 = ["2343","4747","9699","2134","1241"
                ,"1111","0101","3435","5464","0909"];
@@ -70,7 +70,7 @@ soup.setContent(data2);
 La función **show#** retorna un **string** con todas la posiciones del tablero.
  
 ```javascript
-var soup  = Soup.init(data,size);
+var soup  = new Soup(data,size);
 var board = soup.show();
 console.log(board);
 ```
@@ -99,7 +99,7 @@ La función **setFill#**  establece un relleno para ocultar las palabras.
 ```javascript
 const data = ["2343","4747","9699","2134","1241"
                ,"1111","0101","3435","5464","0909"];
-var soup  = Soup.init(data,size);
+var soup  = new Soup(data,size);
 var fill = "0123456789"; 
 soup.setFill(fill);
 ```
