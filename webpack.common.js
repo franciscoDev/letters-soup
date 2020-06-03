@@ -15,7 +15,7 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   output: {
-    filename: 'soup.bundle.js',
+    filename: 'soup.min.js',
     path: path.resolve(__dirname, 'build'),
     libraryTarget: 'umd',
     //library: 'Soup'
