@@ -23,9 +23,7 @@
 ```
 
 ### Instalación
- ```sh
-$ npm i letters-soup
-```
+> $ npm i letters-soup
 
 ### Uso
 
