@@ -23,7 +23,7 @@
 ```
 
 ### Instalación
-descargar el archivo minificado [letters-soup.min.js](https://github.com/franciscoDev/letters-soup/tree/master/build)
+descargar el archivo minificado [letters-soup.min.js](https://github.com/franciscoDev/letters-soup/releases/tag/1.0.0)
 
 ### Uso
 
