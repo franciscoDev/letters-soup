@@ -3,12 +3,29 @@
 ### Descripcion
 **Letters-soup** es una pequeña librería para crear tableros para jugar a encontrar la palabra.
 
-[![sopa-letras](https://)
+```
+[Y][O][T][K][L][M][C][M][O][N][G][K][O][H][V][A]
+[H][R][Z][D][L][N][A][F][C][O][O][B][O][M][Y][B]
+[Z][N][V][I][Y][T][A][Q][O][I][F][E][Y][U][C][E]
+[K][X][O][U][K][V][V][Y][Z][T][L][U][L][T][I][J]
+[Q][B][V][A][I][X][W][G][I][Y][A][A][X][G][R][A]
+[M][V][R][A][P][E][R][I][C][O][X][G][W][X][A][F]
+[Z][N][E][R][G][P][E][R][R][O][D][O][X][W][R][E]
+[I][O][U][E][O][L][I][R][D][O][C][O][C][I][B][S]
+[V][T][C][T][C][W][D][T][R][L][O][B][G][G][E][S]
+[Y][A][K][N][N][A][X][T][L][C][E][Z][W][U][Z][L]
+[J][R][A][A][C][T][N][W][X][B][R][Z][H][A][M][L]
+[N][K][F][P][Y][H][N][G][P][L][G][S][Q][L][M][J]
+[D][E][L][F][I][N][Y][C][U][U][I][B][Y][A][O][Z]
+[B][F][L][Q][E][P][B][W][Q][R][T][O][N][O][M][G]
+[A][T][A][M][A][L][O][N][H][R][O][V][M][Q][S][Y]
+[Q][P][B][H][Y][H][O][G][E][P][Q][U][G][S][V][V]
+```
 
 ### Instalación
-Por ahora solo se puede descargar desde el [tag release](https://github.com/franciscoDev/letters-soup/releases) de este de este repositorio pronto se creará un paquete para npm.
-
-:point_right:  [letters-soup-alpha-1.0](https://github.com/franciscoDev/letters-soup/releases/)
+ ```sh
+$ npm i letters-soup
+```
 
 ### Uso
 
@@ -52,7 +69,7 @@ var soup  =  new Soup(data,size);
 soup.setSize(10);
 ```
 La función **setContent#** establece un nuevo contenido para el tablero recibe un **array** de **string** para colocar en el tablero.
->:information_source:**Contenido**: el contenido no solo puede ser palabra también puede ser combinación de números, caracteres especiales etc. También se puede enviar un relleno acorde al contenido del tablero en la función **init#** o **setFill#** para ocultar los caracteres.
+>:information_source:**Contenido**: el contenido no solo puede ser palabra también puede ser combinación de números, caracteres especiales etc. También se puede enviar un relleno acorde al contenido del tablero en la función **setFill#** para ocultar los caracteres.
  
 ```javascript
 const data = ["iguala","cuervo","perro","cocodrilo","delfin"
@@ -117,13 +134,13 @@ soup.setFill(fill);
     <button onclick="solve()">solve</button>
     <button onclick="generate()">generate</button>
     <button onclick="setSize()">size</button>
-    <script src="./soup.bundle.js"></script>
+    <script src="./soup.min.js"></script>
     <script>
       const data = ["iguala","cuervo","perro","cocodrilo","delfin"
                     ,"leon","pantera","gato","perico","mono"
                     ,"raton","abeja","zebra","tigre","canguro"];
 
-      var soup =  Soup.init(data,16);
+      var soup =  Soup(data,16);
 
       function generate() {
          soup.generate();
