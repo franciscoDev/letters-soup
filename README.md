@@ -23,7 +23,7 @@
 ```
 
 ### Instalación
-> $ npm i letters-soup
+descargar el archivo minificado [letters-soup.min.js](https://github.com/franciscoDev/letters-soup/tree/master/build)
 
 ### Uso
 
