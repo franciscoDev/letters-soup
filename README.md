@@ -138,7 +138,7 @@ soup.setFill(fill);
                     ,"leon","pantera","gato","perico","mono"
                     ,"raton","abeja","zebra","tigre","canguro"];
 
-      var soup =  Soup(data,16);
+      var soup = new  Soup(data,16);
 
       function generate() {
          soup.generate();
