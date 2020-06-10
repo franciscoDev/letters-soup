@@ -22,6 +22,7 @@ export class Soup {
  
     public generate():Array<any>{ 
         this.board.reset();
+        this.solution = {};
         for (let index = 0; index < this.content.length ; index++) {
             const content = this.content[index].toUpperCase();
             const cells = this.getValidCells(content);
