@@ -1,6 +1,6 @@
 {
   "name": "letters-soup",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "lib for create 'word find' boards",
   "main": "./build/soup.min.js",
   "scripts": {
