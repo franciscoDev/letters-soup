@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/franciscoDev/letters-soup.git"
   },
-  "keywords": [],
+  "keywords": ["puzzle"],
   "author": "FrancDev francisco19.developer@gmail.com",
   "license": "ISC",
   "devDependencies": {
