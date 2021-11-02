@@ -1,4 +1,4 @@
- import { Cell } from "./cell";
+import { Cell } from "./cell";
 
 export class Board {
 
@@ -69,14 +69,14 @@ export class Board {
     }
 
     //Get part of a column from specific index.
-    public getColumnCells(startCell:Cell,numberCells:number):Array<Cell>{
+    public getColumnCells(initCell:Cell,numberCells:number):Array<Cell>{
         let cells:Array<Cell> = [];
-        let indexRow = startCell.getRow();
+        let indexRow = initCell.getRow();
         if( numberCells > this.cells.length) throw new Error('Invalid number cells');
 
         for (let row = 0; (row < numberCells  && indexRow <= this.cells.length-1); row++) {
-            cells.push(this.cells[indexRow][startCell.getColumn()]);
-            indexRow = indexRow +1 ;
+            cells.push(this.cells[indexRow][initCell.getColumn()]);
+            indexRow = indexRow + 1 ;
         }
         return cells;
     }

@@ -1,6 +1,6 @@
 import { Board } from "./board";
 import {Cell} from "./cell";
-import { ContentDirection} from "./content_direction";
+import { ContentDirection } from "./content_direction";
 
 export class Soup {
 
@@ -11,26 +11,26 @@ export class Soup {
     private solution:any;
     private size:number;
 
-    constructor(content:Array<string>,size:number,fill?:string) {
-        this.content   = content;
-        this.size = size;
-        this.solution = {};
-        this.board     = new Board(this.size,this.size,'*');
-        this.defaultFill = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        this.fill = (fill)?fill:this.defaultFill;
+    constructor(words:Array<string>,size:number,fill?:string) {
+        this.content        = words;
+        this.size           = size;
+        this.solution       = {};
+        this.board          = new Board(this.size,this.size,'*');
+        this.defaultFill    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        this.fill           = (fill) ? fill : this.defaultFill;
     }
  
     public generate():Array<any>{ 
         this.board.reset();
         this.solution = {};
-        for (let index = 0; index < this.content.length ; index++) {
-            const content = this.content[index].toUpperCase();
-            const cells = this.getValidCells(content);
-            this.setContentInBoard(content,cells,this.isInvertContent() );
-            this.solution[content] = cells;
-        } 
-         this.fillEmptyCells();
-         return this.board.getAllCells();
+        this.content.forEach((value)=>{
+            const word  = value.toUpperCase();
+            const cells = this.getValidCells(word);
+            this.setContentInBoard(word,cells,this.isInvertContent() );
+            this.solution[word] = cells;
+        });
+        this.fillEmptyCells();
+        return this.board.getAllCells();
     }
 
     public getSolution(valueInContent?:string):any{
@@ -82,13 +82,13 @@ export class Soup {
 
     private getNumberCellsFromContentSize(contentSize:number):Array<Cell>{
         let isValidWordInBoard = false;
-        let cells:Array<Cell> = [];
+        let cells:Array<Cell>  = [];
         do {
-            const randomCell= this.getRandomCell();
-            const direction = this.getRandomDirection();
-            if(direction == ContentDirection.DiAGONAL)  cells = this.board.getDiagonalCells(randomCell,contentSize);
-            if(direction == ContentDirection.HORIZONTAL)cells = this.board.getRowCells(randomCell,contentSize);
-            if(direction == ContentDirection.VERTICAL)  cells = this.board.getColumnCells(randomCell,contentSize);
+            const randomCell = this.getRandomCell();
+            const direction  = this.getRandomDirection();
+            if(direction === ContentDirection.DIAGONAL)  cells = this.board.getDiagonalCells(randomCell,contentSize);
+            if(direction === ContentDirection.HORIZONTAL)cells = this.board.getRowCells(randomCell,contentSize);
+            if(direction === ContentDirection.VERTICAL)  cells = this.board.getColumnCells(randomCell,contentSize);
             if( cells.length === contentSize) isValidWordInBoard = true;
         } while (! isValidWordInBoard );
        
@@ -96,14 +96,11 @@ export class Soup {
     }
 
     private isValidCells(cells:Array<Cell>,content:string):boolean{
-        let isValid = true;
         for (let i = 0; i < cells.length; i++) {
-          if( cells[i].getContent() != this.board.getDefaultContentCell() ){
-            isValid = false;
-            break;
-          }
+          if( cells[i].getContent() !== this.board.getDefaultContentCell() )
+            return false;
         }
-        return isValid;
+        return true;
     }
 
     private getRandomCharFromFill():string{
@@ -118,20 +115,19 @@ export class Soup {
     }
 
     private getRandomDirection():number{
-        let directions = 3;//HORIZONTAL,VERTICAL,DIAGONAL. 
+        let directions = Object.entries(ContentDirection).length;//HORIZONTAL,VERTICAL,DIAGONAL. 
         return Math.floor(Math.random() * directions ) + 1; ;
     }
 
     private isInvertContent():boolean{
-        let isInvert = (Math.floor(Math.random() * 2)==1)?true:false;
-        return isInvert;
+        return (Math.floor(Math.random() * 2) === 1) ? true : false;
     }
 
     private fillEmptyCells():void{
         for (let row = 0; row < this.board.getSize(); row++) {
             for (let column = 0; column <  this.board.getSize(); column++) {
                 let cell = this.board.getCell(row,column);
-                if( cell.getContent() == this.board.getDefaultContentCell() ){
+                if( cell.getContent() === this.board.getDefaultContentCell() ){
                     cell.setContent(this.getRandomCharFromFill());
                 }
             }   
