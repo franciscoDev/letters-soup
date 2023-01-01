@@ -16,7 +16,7 @@
   "author": "FrancDev francisco19.developer@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "ts-loader": "^6.0.0",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.7.5",
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1",
